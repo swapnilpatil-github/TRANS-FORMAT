@@ -1,6 +1,5 @@
 import { Router } from 'express';
-import AudioController from '../Controllers/AudioController.js'; // Adjust the path based on your actual folder structure
-
+import AudioController from '../Controllers/AudioController.js'; 
 const AudioRouter = Router();
 
 

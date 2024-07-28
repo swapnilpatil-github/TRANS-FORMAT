@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import ImageController from '../Controllers/ImageController.js'; // Adjust the path based on your actual folder structure
+import ImageController from '../Controllers/ImageController.js'; 
 
 const ImageRouter = Router();
 

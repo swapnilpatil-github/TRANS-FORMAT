@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import VideoController from '../Controllers/VideoController.js'; // Adjust the path based on your actual folder structure
+import VideoController from '../Controllers/VideoController.js'; 
 
 const VideoRouter = Router();
 

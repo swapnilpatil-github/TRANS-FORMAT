@@ -9,6 +9,13 @@ import multer from 'multer';
 import path from 'path';
 
 
+import session from 'express-session';
+import passport from './config/passport.js'; // Adjust the path if necessary
+import authRoutes from './Routes/authRoutes.js'; // Adjust the path if necessary
+
+
+
+
 const app = express();
 const PORT = 5000;
 
@@ -18,7 +25,29 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+
+// Session configuration
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
+// Passport initialization
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
+
+
+
 app.use(cors());
+
+// Authentication routes
+app.use('/auth', authRoutes);
+
 
 // Register routes
 const storage = multer.diskStorage({

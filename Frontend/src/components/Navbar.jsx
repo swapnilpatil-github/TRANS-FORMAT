@@ -1,81 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { useState } from "react";
-
-// function Navbar() {
-
-//   const [showDropdown, setShowDropdown] = useState(false);
-
-//   const toggleDropdown = () => {
-//     setShowDropdown(!showDropdown);
-    
-//   };
-
-//   return (
-//     <div className="bg-white shadow-md">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center h-16">
-//           <div className="flex-shrink-0">
-//             <Link to="/" className="font-bold text-black text-lg">
-//               convertIT
-//             </Link>
-//           </div>
-//           <div className="hidden md:block">
-//             <div className="ml-10 flex items-baseline space-x-8">
-//               <Link to="/" className="text-black hover:text-gray-500">
-//                 Home
-//               </Link>
-//               <Link to="/about" className="text-black hover:text-gray-500">
-//                 About Us
-//               </Link>
-//               <Link to="/contact" className="text-black hover:text-gray-500">
-//                 Contact Us
-//               </Link>
-//             </div>
-//           </div>
-//           <div className="flex items-center">
-//             <Link to="/login" className="text-black hover:text-gray-500 ">
-//               Login
-//             </Link>
-//             <Link
-//               to="/register"
-//               className="text-black hover:text-gray-500 ml-10"
-//             >
-//               Register
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="border-b border-black"></div> {/* Solid underline */}
-
-      
-//       <div className="bg-gray-100">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <ul className="flex justify-around items-center h-16">
-//             <li>
-//               <Link to="/audio" className="text-black hover:text-gray-500">
-//                 Audio Converter
-//               </Link>
-//             </li>
-//             <li>
-//               <Link to="/video" className="text-black hover:text-gray-500">
-//                 Video Converter
-//               </Link>
-//             </li>
-//             <li>
-//               <Link to="/image" className="text-black hover:text-gray-500">
-//                 Image Converter
-//               </Link>
-//             </li>
-           
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Navbar;
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -109,26 +31,26 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="font-bold text-black text-lg">
+            <Link to="/home" className="font-bold text-black text-lg">
               TRANS-FORMAT
             </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8 relative">
               <Link
-                to="/"
+                to="/home"
                 className="bg-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 transition-colors duration-300"
               >
                 Home
               </Link>
               <Link
-                to="/about"
+                to="/aboutus"
                 className="bg-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 transition-colors duration-300"
               >
                 About Us
               </Link>
               <Link
-                to="/contact"
+                to="/contactus"
                 className="bg-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 transition-colors duration-300"
               >
                 Contact Us
@@ -176,16 +98,12 @@ function Navbar() {
             >
               Login
             </Link>
-            <Link
-              to="/register"
-              className="bg-orange-500 text-white rounded-full px-4 py-2 hover:bg-orange-600 transition-colors duration-300 ml-4"
-            >
-              Register
-            </Link>
+            
+           
           </div>
         </div>
       </div>
-      <div className="border-b border-black"></div> {/* Solid underline */}
+      <div className="border-b border-black"></div> 
     </div>
   );
 }

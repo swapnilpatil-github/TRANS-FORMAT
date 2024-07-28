@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import ImageRouter from './Routes/ImageRoutes.js'; // Adjust the path based on your actual folder structure
+import ImageRouter from './Routes/ImageRoutes.js'; 
 import AudioRouter from './Routes/AudioRoutes.js';
 import VideoRouter from './Routes/VideoRoutes.js';
 
@@ -10,10 +10,8 @@ import path from 'path';
 
 
 import session from 'express-session';
-import passport from './config/passport.js'; // Adjust the path if necessary
-import authRoutes from './Routes/authRoutes.js'; // Adjust the path if necessary
-
-
+import passport from './config/passport.js'; 
+import authRoutes from './Routes/authRoutes.js'; 
 
 
 const app = express();
@@ -45,17 +43,16 @@ app.use(passport.session());
 
 app.use(cors());
 
-// Authentication routes
 app.use('/auth', authRoutes);
 
 
-// Register routes
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Destination folder for uploaded files
+    cb(null, 'uploads/'); 
   },
   filename: (req, file, cb) => {
-    // Corrected the filename generation
+    
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   }
 });

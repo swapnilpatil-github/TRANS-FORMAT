@@ -11,6 +11,7 @@ function ImageConverter() {
 
   
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_BACKEND_BASE_URL;
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: acceptedFiles => {
@@ -37,7 +38,7 @@ function ImageConverter() {
       formData.append('file', file);
       formData.append('format', format);
 
-      const response = await axios.post('/image/convert', formData, {
+      const response = await axios.post(`${apiUrl}/image/convert`, formData, {
         responseType: 'blob',
       });
 

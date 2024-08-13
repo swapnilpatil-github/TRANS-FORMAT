@@ -10,6 +10,8 @@ function AudioConverter() {
   const [isConverting, setIsConverting] = useState({});
 
   const navigate = useNavigate();
+ 
+
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: acceptedFiles => {
@@ -34,9 +36,11 @@ function AudioConverter() {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('format', format);
+    VITE_BACKEND_BASE_URL
 
     try {
-      const response = await axios.post('/audio/convert', formData, {
+      const apiUrl = import.meta.env.VITE_BACKEND_BASE_URL;
+      const response = await axios.post(`${apiUrl}/audio/convert`, formData, {
         responseType: 'blob',
       });
 
@@ -62,6 +66,7 @@ function AudioConverter() {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
         >
           Go Back
+          
         </button>
       </div>
       <section className="border-dashed border-4 border-gray-500 p-8 rounded-md bg-gray-100">

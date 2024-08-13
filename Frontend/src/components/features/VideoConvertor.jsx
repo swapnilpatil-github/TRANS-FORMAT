@@ -37,7 +37,8 @@ function VideoConverter() {
     formData.append('format', format);
 
     try {
-      const response = await axios.post('/video/convert', formData, {
+      const apiUrl = import.meta.env.VITE_BACKEND_BASE_URL;
+      const response = await axios.post(`${apiUrl}/video/convert`, formData, {
         responseType: 'blob',
       });
 

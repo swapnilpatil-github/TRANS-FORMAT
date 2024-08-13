@@ -15,7 +15,7 @@ import authRoutes from './Routes/authRoutes.js';
 
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Increase payload size limit
 app.use(bodyParser.json({ limit: '50mb' }));

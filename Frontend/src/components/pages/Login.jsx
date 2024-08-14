@@ -3,7 +3,8 @@ import React from 'react';
 
 const Login = () => {
   const handleGoogleLogin = () => {
-    window.location.href = 'http://localhost:5000/auth/google';
+    const apiUrl = import.meta.env.VITE_BACKEND_BASE_URL || "https://trans-format.onrender.com";;
+    window.location.href = `${apiUrl}/auth/google`;
   };
 
   return (

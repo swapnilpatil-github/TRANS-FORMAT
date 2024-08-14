@@ -28,8 +28,7 @@ Thumbs.db
 # Testing
 /coverage
 
-# Production
-/build
+
 
 # Misc
 .DS_Store
